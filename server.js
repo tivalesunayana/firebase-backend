@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const firebaseAdmin = require("firebase-admin");
-const path = require("./firebase-messaging-sw");
+// const path = require("./firebase-messaging-sw");
 const serviceAccount = require("./mern-52470-firebase-adminsdk-l1j75-15b11fbeb4.json");
 
 const FCM = require("fcm-node");
@@ -47,7 +47,7 @@ app.post("/api/register", async (req, res) => {
 
 app.post("/api/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email } = req.body;
 
     const user = await User.findOne({ email });
     if (user) {
